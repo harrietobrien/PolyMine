@@ -1,4 +1,5 @@
 site_name: PolyMine
+site_url: https://harrietobrien.github.io/PolyMine/
 docs_dir: docs
 
 theme:
