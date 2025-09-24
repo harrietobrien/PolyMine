@@ -1,0 +1,22 @@
+site_name: PolyMine
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+  hide:
+    - toc
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Notes: notes.md
+      - Proposal: proposal.md
+      - MkDocs: mkdocs.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list

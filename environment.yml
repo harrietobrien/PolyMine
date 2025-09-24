@@ -1,0 +1,22 @@
+name: PolyMine
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - jupyter
+  - spglib
+  - pymatgen
+  - ase
+  - hdbscan
+  - dscribe
+  - matplotlib
+  - networkx
+  - tqdm
+  - pip:
+      - mp-api
