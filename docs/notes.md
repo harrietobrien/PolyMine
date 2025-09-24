@@ -2,8 +2,6 @@
 
 [HPC Application](https://eastcarolinauniversity.formstack.com/workflows/high_performance_computing_application?sso=6516dc5160386)
 
-![COD SVG](img/cod.svg){ .cod-logo }
-
 **Crystallography Open Database ([COD](https://www.crystallography.net/cod/))**
 
 - [COD wiki](https://wiki.crystallography.net)
