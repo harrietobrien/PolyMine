@@ -1,34 +1,43 @@
 **MkDocs: Static Site Generator**
 
+## Linux / MacOS
 
+**Installation:** `conda` environment
 ```bash
 conda install conda-forge::mkdocs-material
 ```
+**Preview Page:** Start the live-reloading docs server.
 
+⤷ inside root directory where`mkdoc.yml`resides:
 ```bash
 mkdocs serve [OPTIONS]
 ```
-
+Kill all processes listening to a given port. If you ran `mkdocs serve` without specifying a port:
 ```bash
-(PolyMine) ✿ harrie@archlinux [~/6840DM/PolyMine] $ lsof -i :8000
-COMMAND     PID   USER FD   TYPE DEVICE SIZE/OFF NODE NAME
-vivaldi-b 16217 harrie 24u  IPv4 700559      0t0  TCP localhost:60724->localhost:irdmi (ESTABLISHED)
-mkdocs    16798 harrie  3u  IPv4 360275      0t0  TCP localhost:irdmi (LISTEN)
-```
-```bash
-(PolyMine) ✿ harrie@archlinux [~/6840DM/PolyMine] $ kill -9 16217
-(PolyMine) ✿ harrie@archlinux [~/6840DM/PolyMine] $ kill -9 16798
-[1]+  Killed                     mkdocs serve
+(PolyMine) user@archlinux [~/PolyMine] $ sudo kill -9 $(sudo lsof -t -i:8000)
 ```
 
 ```bash
-(PolyMine) ✿ harrie@archlinux [~/6840DM/PolyMine] $ mkdocs build --clean
+(PolyMine) user@archlinux [~/PolyMine] $ mkdocs build --clean
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /home/harrie/6840DM/PolyMine/site
+INFO    -  Building documentation to directory: /home/user/PolyMine/site
 INFO    -  Documentation built in 0.20 seconds
-(PolyMine) ✿ harrie@archlinux [~/6840DM/PolyMine] $ mkdocs serve
+(PolyMine) user@archlinux [~/PolyMine] $ mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.19 seconds
 INFO    -  [18:12:34] Serving on http://127.0.0.1:8000/
+```
+
+## Windows
+
+Kill all processes listening to a given port.
+
+```powershell
+netstat -ano | findstr :8080
+```
+This might return a line like: `TCP 0.0.0.0:8080 0.0.0.0:0 LISTENING 12345`, where `12345` is the PID.
+
+```powershell
+taskkill /PID [PID] /F
 ```
