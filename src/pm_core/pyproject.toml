@@ -1,0 +1,15 @@
+[build-system]
+requires = ["scikit-build-core>=0.9", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pm_core"
+version = "0.1.0"
+description = "C++ core for CIF data."
+authors = [{ name = "Harriet" }]
+requires-python = ">=3.9"
+dependencies = ["numpy", "zstandard"]
+
+[tool.scikit-build]
+wheel.expand-macos-universal-tags = true
+
